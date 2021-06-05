@@ -31,8 +31,9 @@ enlarge receptive field、high solution low solution info fusion，典型结构F
     ![psenet.jpg](figs/psenet.jpg)
     
 * dbnet
-    2+1，一组缩小的score map，一组文字行边界的值向两侧递减的“距离”，论文中称之为自适应阈值map，可以通过distance trasform求取到，最后根据前两个计算一个dbmap：
-    $$\frac{1}{(1+exp(-k*(score\_map-dist\_map)))}$$
+    2+1，一组缩小的score map，一组文字行边界的值向两侧递减的“距离”，论文中称之为自适应阈值map，可以通过distance trasform求取到，最后根据前两个计算一个dbmap：    
+    
+    ![](http://latex.codecogs.com/gif.latex?\\frac{1}{(1+exp(-k*(scoremap-distmap)))})
     ![dbnet.jpg](figs/dbnet.jpg)
 
 
