@@ -31,7 +31,8 @@ enlarge receptive field、high solution low solution info fusion，典型结构F
     ![psenet.jpg](figs/psenet.jpg)
     
 * dbnet
-    2+1，一组缩小的score map，一组文字行边界的值向两侧递减的“距离”，前两个计算一个1/(1+exp(-k*(score_map-dist_map)))
+    2+1，一组缩小的score map，一组文字行边界的值向两侧递减的“距离”，论文中称之为自适应阈值map，可以通过distance trasform求取到，最后根据前两个计算一个dbmap：
+    $$\frac{1}{(1+exp(-k*(score\_map-dist\_map)))}$$
     ![dbnet.jpg](figs/dbnet.jpg)
 
 
@@ -64,7 +65,7 @@ enlarge receptive field、high solution low solution info fusion，典型结构F
 * 将文字的方向判断也糅合到文字行分割里面来；（业务对应：图片/视频的安全审核，与文字相关的特征工程，为视频搜索或者打tag提供关键的高级特征）
     * 单幅图像中的文字行不具有同一性，垂直、水平、翻转、镜像全出现在一张图上
     * **可以有一种文字行位置+文字方向的检测方案，目前正在验证中**
-* 配合语义信息的文字行检测；（有助于提高回帖和翻译）
+* 配合语义信息的文字行检测；（有助于提高回帖和翻译，或是高级的文本理解）
 
 ## 参考
 
